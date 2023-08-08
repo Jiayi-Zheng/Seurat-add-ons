@@ -13,7 +13,7 @@ LabelProcess <- function(AE, patterns) {
   genename = rownames(AE)
   a = length(patterns)
   for (pattern in patterns) {
-    genename <- sapply(gene, function(x) if (grepl(pattern, x)) '' else x)
+    genename <- sapply(genename, function(x) if (grepl(pattern, x)) '' else x)
   }
   genename <- gsub("[^[:alnum:]]", "_", genename)
   AE$genename = genename
