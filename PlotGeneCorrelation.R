@@ -21,7 +21,7 @@ LabelProcess <- function(AE, patterns) {
 }
 PlotGeneCorrelation <- function(AE, patterns, col1, col2, gene_label, col1threshold, col2threshold) {
     AE = LabelProcess(AE,patterns)
-    ggplot(AE, aes_string(col1, col2, label = gene_label)) +    # ggplot2 with some labels
+    ggplot(AE, aes_string(col1, col2, label = gene_label)) +
         geom_point() +
         geom_text(data=subset(AE, AE[[col1]] > as.numeric(col1threshold) | AE[[col2]] > as.numeric(col2threshold)),
                   aes_string(col1,col2,label=gene_label))
